@@ -1,11 +1,35 @@
-library(readr); library(tidyverse); library(survival); library(mediation); library(ggpubr); library(rms);library(caret)
-library(survminer); library(haven); library(rsq); library(ResourceSelection); library(ggsci);library(timereg); library(haven)
+
+install.packages("readr")
+install.packages("here")
+install.packages("ggplot2")
+install.packages("stringr")
+install.packages("magrittr")
+install.packages("dplyr")
+install.packages("haven")
+install.packages("ggpubr")
+install.packages("survival")
+install.packages("mvtnorm")
+install.packages("tidyr")
+install.packages("survminer")
+
+library(readr)
+library(here)
+library(ggplot2)
+library(stringr)
+library(magrittr)
+library(dplyr)
+library(haven)
+library(ggpubr)
+library(survival)
+library(mvtnorm)
+library(tidyr)
+library(survminer)
 
 ## Manejo de la base de datos####
-setwd("/Users/nefoantonio/UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO/OMAR YAXMEHEN BELLO CHAVOLLA - COVID-19, Diabetes and obesity")
-setwd("C:/Users/HP-PC/OneDrive - UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO/COVID-19, Diabetes and obesity")
+setwd("")
+here::i_am("diabetes_covid.R")
+setwd(here())
 covid <- read_csv("200518COVID19MEXICO.csv")
-
 
 covid$id<-paste0(str_pad(covid$ENTIDAD_RES, 2,pad = "0"),str_pad(covid$MUNICIPIO_RES,3, pad="0"))
 covid1<-covid[,c(14:15,18:30,32:35)]
