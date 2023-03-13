@@ -26,7 +26,6 @@ library(tidyr)
 library(survminer)
 
 ## Manejo de la base de datos####
-setwd("")
 here::i_am("diabetes_covid.R")
 setwd(here())
 covid <- read_csv("200518COVID19MEXICO.csv")
